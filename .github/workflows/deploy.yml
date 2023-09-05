@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: npm i
       - name: Build
-        run: npm build
+        run: npm run build
       - name: Generate 404.html
         run: cp dist/top_colleagues/index.html dist/top_colleagues/404.html
       - name: Archive build
