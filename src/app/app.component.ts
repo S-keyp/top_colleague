@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'top_colleagues';
+  collegue= {
+    pseudo: 'tchoin',
+    score: 50,
+    photo: "https://picsum.photos/200"
+  }
 }
