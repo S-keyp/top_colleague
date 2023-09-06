@@ -11,8 +11,8 @@
 
 <div class="profile">
     <img [src]="colleague.photo">
-    <p>Pseudo: {{colleague.pseudo}}</p>
-    <p>Score: {{colleague.score}}</p>
+    <p>Pseudo: {{colleague.pseudo | uppercase}}</p>
+    <p>Score: {{colleague.score | score}}</p>
 
     <tc-like-hate (vote)="handleVote($event)"></tc-like-hate>
 </div>
