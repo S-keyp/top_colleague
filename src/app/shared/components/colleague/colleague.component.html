@@ -1,7 +1,18 @@
-<div>
-    <img [src]="collegue.photo">
-    <p>Pseudo: {{collegue.pseudo}}</p>
-    <p>Score: {{collegue.score}}</p>
+<style>
+    .profile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+    }
 
-    <tc-like-hate></tc-like-hate>
+</style>
+
+<div class="profile">
+    <img [src]="colleague.photo">
+    <p>Pseudo: {{colleague.pseudo}}</p>
+    <p>Score: {{colleague.score}}</p>
+
+    <tc-like-hate (vote)="handleVote($event)"></tc-like-hate>
 </div>

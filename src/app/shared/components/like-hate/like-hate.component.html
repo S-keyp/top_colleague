@@ -1,3 +1,8 @@
-<p>like-hate works!</p>
-<input type="button" value="like" id="like"/>
-<input type="button" value="hate" id="hate"/>
+<button [disabled]="score >= 100" (click)="like()" type="button" id="like">like</button>
+<button [disabled]="score <= 0" (click)="hate()" type="button"  id="hate">hate</button>
+
+<style>
+    .disabled {
+        opacity: .5;
+    }
+</style>

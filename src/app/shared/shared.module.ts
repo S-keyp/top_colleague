@@ -4,7 +4,6 @@ import { LikeHateComponent } from '../shared/components/like-hate/like-hate.comp
 import { ColleagueComponent } from './components/colleague/colleague.component';
 
 
-
 @NgModule({
   declarations: [
     LikeHateComponent,

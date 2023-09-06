@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { LikeHate } from 'src/app/models/like-hate';
 
 @Component({
   selector: 'tc-like-hate',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./like-hate.component.scss']
 })
 export class LikeHateComponent {
+  @Input() score! : number
+  @Output() vote: EventEmitter<LikeHate> = new EventEmitter<LikeHate>();
 
+  like(){
+    this.vote.emit(LikeHate.LIKE);
+  }
+  hate(){
+    this.vote.emit(LikeHate.HATE);
+  }
 }
+
+

@@ -7,5 +7,11 @@ import { Colleague } from 'src/app/models/colleague';
   styleUrls: ['./colleague.component.scss']
 })
 export class ColleagueComponent {
- @Input() collegue! : Colleague
+ @Input() colleague! : Colleague
+
+
+ handleVote(b: number){
+  if(b == 1) this.colleague.score--
+  else this.colleague.score++
+ }
 }
