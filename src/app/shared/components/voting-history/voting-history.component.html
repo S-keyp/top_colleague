@@ -1,0 +1,9 @@
+<div>
+    <h3>Historique</h3>
+    <div *ngFor="let vote of votes">
+        <img [src]="vote.colleague.photo">
+        <p *ngIf="vote.colleague.score >= 100">{{vote.colleague.pseudo}} est apprécié, il/elle à un score de: {{vote.colleague.score}}</p>
+        <p *ngElse>{{vote.colleague.pseudo}} est détesté, il/elle à un score de: {{vote.colleague.score}}</p>
+        <button (click)="removeVote(vote)">Supprimer</button>
+    </div>
+</div>
