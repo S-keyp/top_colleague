@@ -1,0 +1,12 @@
+<div class="colleagues-container">
+    <tc-colleague *ngFor="let colleague of colleagueList" [colleague]="colleague"></tc-colleague>
+</div>
+
+<style>
+    .colleagues-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+</style>
