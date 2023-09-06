@@ -32,6 +32,21 @@ export class WelcomePage {
       score: 1000,
       photo: "https://picsum.photos/200"
     },
+    {
+      pseudo: 'Juan',
+      score: -400,
+      photo: "https://picsum.photos/200"
+    },
+    {
+      pseudo: 'Michel',
+      score: -125,
+      photo: "https://picsum.photos/200"
+    },
+    {
+      pseudo: 'Yes',
+      score: -220,
+      photo: "https://picsum.photos/200"
+    },
   
   ]
 

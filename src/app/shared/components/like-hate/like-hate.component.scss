@@ -1,0 +1,37 @@
+.disabled {
+    opacity: .5;
+}
+
+.button{
+    border: none;
+    position: relative;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 12px;
+}
+
+.upvote {
+    background-color: rgba(75, 192, 8, 0.864);
+}
+
+// .upvote::after{
+//     content: "⬆";
+//     color: rgba(75, 192, 8, 0.864);
+//     position: absolute;
+//     top: 0;
+//     left: 50%;
+// }
+
+// .downvote::after{
+//     content: "⬇";
+//     color: rgba(255, 0, 0, 0.814);
+//     position: absolute;
+//     top: 0;
+//     left: 50%;
+// }
+
+.downvote {
+    background-color: rgba(255, 0, 0, 0.814);
+}
