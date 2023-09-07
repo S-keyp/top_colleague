@@ -21,6 +21,11 @@
     background-color: rgba(255, 0, 0, 0.814);
 }
 
-.button:hover{
+.button:hover:not([disabled]){
     transform: scale(1.1);
+}
+
+.button[disabled]{
+    opacity: .5;
+    background-color: #ddd;
 }

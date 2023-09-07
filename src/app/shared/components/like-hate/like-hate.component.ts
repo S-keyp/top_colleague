@@ -7,7 +7,8 @@ import { LikeHate } from 'src/app/models/like-hate';
   styleUrls: ['./like-hate.component.scss']
 })
 export class LikeHateComponent {
-  @Input() score! : number
+  @Input() canLike! : boolean
+  @Input() canDislike! : boolean
   @Output() vote: EventEmitter<LikeHate> = new EventEmitter<LikeHate>();
 
   like(){
