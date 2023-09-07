@@ -6,28 +6,28 @@ import { VoteService } from 'src/app/providers/vote.service';
 
 
 @Component({
-  selector: 'tc-voting-history',
-  templateUrl: './voting-history.component.html',
-  styleUrls: ['./voting-history.component.scss'],
-  providers: [ColleagueService]
+	selector: 'tc-voting-history',
+	templateUrl: './voting-history.component.html',
+	styleUrls: ['./voting-history.component.scss'],
+	providers: [ColleagueService]
 })
 export class VotingHistoryComponent implements OnInit {
-  votes: Vote[] = [];
+	votes: Vote[] = [];
 
-  constructor(private voteService: VoteService){
+	constructor(private voteService: VoteService) {
 
-  }
-
-
-  ngOnInit(): void {
-    this.voteService.getVotes().then((data) => {
-      this.votes = data
-    })
-  }
+	}
 
 
-  removeVote(vote: any){
-    this.votes = this.votes.filter(v => v !== vote)
-  }
+	ngOnInit(): void {
+		this.voteService.getVotes().then((data) => {
+			this.votes = data
+		})
+	}
+
+
+	removeVote(vote: any) {
+		this.votes = this.votes.filter(v => v !== vote)
+	}
 }
 
