@@ -1,46 +1,47 @@
 import { Component, Injectable, OnDestroy } from '@angular/core';
 import { Observable, Subject, Subscription, interval } from 'rxjs';
+import { Colleague } from 'src/app/models/colleague';
 import { LikeHate } from 'src/app/models/like-hate';
 import { Vote } from 'src/app/models/vote';
 import { ColleagueService } from 'src/app/providers/colleague.service';
 import { VoteService } from 'src/app/providers/vote.service';
 
 @Component({
-  selector: 'tc-counter',
-  templateUrl: './counter.component.html',
-  styleUrls: ['./counter.component.scss']
+	selector: 'tc-counter',
+	templateUrl: './counter.component.html',
+	styleUrls: ['./counter.component.scss']
 })
 @Injectable()
 export class CounterComponent implements OnDestroy {
- 
-  voteSub: Subscription
-  voteData: Vote | undefined 
-  obs1 = interval(400)
-  
-  constructor(private voteService: VoteService, private colleagueService: ColleagueService){
-    this.voteSub = this.voteService.votesObs.subscribe({
-      next: this.handleUpdateResponse.bind(this),
-      error: this.handleError.bind(this)
-    })
 
-  }
+	voteSub: Subscription
+	voteData: Vote | undefined
+	obs1 = interval(400)
 
-  handleError(err: any){
-    console.error(err);
-    
-  }
-  handleUpdateResponse(data:any){
-    console.log(data)
-    this.voteData = data
-  }
+	constructor(private voteService: VoteService, private colleagueService: ColleagueService) {
+		this.voteSub = this.voteService.votesObs.subscribe({
+			next: this.handleUpdateResponse.bind(this),
+			error: this.handleError.bind(this)
+		})
 
-  ngOnDestroy(): void {
-    this.voteSub.unsubscribe()
-  }
+	}
 
-  postVote(){
-    console.log('post')
-    this.colleagueService.voteForCollegue("gio01", "LIKE")
-  }
+	handleError(err: any) {
+		console.error(err);
+	}
+	
+	handleUpdateResponse(data: any) {
+		console.log(data)
+		this.voteData = data
+		console.log('handleUpdateResponse', this.voteData)
+	}
+
+	ngOnDestroy(): void {
+		this.voteSub.unsubscribe()
+	}
+
+	postVote() { //colleague: Colleague, vote: LikeHate
+		this.voteService.voteForCollegue("jor01", "LIKE")
+	}
 
 }

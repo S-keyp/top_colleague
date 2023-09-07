@@ -11,42 +11,6 @@ import { ColleagueService } from 'src/app/providers/colleague.service';
   providers: [ColleagueService]
 })
 export class VotingHistoryComponent implements OnInit {
-  
-  // votes: Vote[] =[
-  //   {
-  //     colleague : {
-  //       pseudo: 'azer',
-  //       score: 100,
-  //       photo: "https://picsum.photos/200",
-  //     },
-  //     vote : LikeHate.HATE,
-  //   },
-  //   {
-  //     colleague : {
-  //       pseudo: 'qsdf',
-  //       score: 300,
-  //       photo: "https://picsum.photos/200"
-  //     },
-  //     vote : LikeHate.HATE,
-  //   },
-  //   {
-  //     colleague : {
-  //       pseudo: 'wcxv',
-  //       score: 400,
-  //       photo: "https://picsum.photos/200"
-  //     },
-  //     vote : LikeHate.HATE,
-  //   },
-  //   {
-  //     colleague : {
-  //       pseudo: 'yuio',
-  //       score: 125,
-  //       photo: "https://picsum.photos/200"
-  //     },
-  //     vote : LikeHate.HATE,
-  //   },
-  // ]
-
   votes: Vote[] = [];
 
   constructor(private colleagueService: ColleagueService){
