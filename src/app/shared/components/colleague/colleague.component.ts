@@ -14,8 +14,6 @@ export class ColleagueComponent {
 	constructor(private voteService: VoteService){ }
 
 	handleVote(b: number) {
-		console.log(this.colleague)
-		console.log(LikeHate[b])
 		this.voteService.voteForCollegue(this.colleague.pseudo,LikeHate[b].toString())
 	}
 }

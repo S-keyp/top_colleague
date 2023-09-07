@@ -10,8 +10,8 @@ import axios from 'axios';
 export class VoteService {
 
   private votes = new Subject<Vote>();
+  private baseUrl = 'https://app-6f6e9c23-7f63-4d86-975b-a0b1a1440f94.cleverapps.io/api/v2'
 
-  baseUrl = 'https://app-6f6e9c23-7f63-4d86-975b-a0b1a1440f94.cleverapps.io/api/v2'
 
   get votesObs(){
     return this.votes.asObservable();
@@ -46,5 +46,24 @@ export class VoteService {
 		}
 	}
 	
+	async getVotes() {
+		const endpoint = this.baseUrl + "/votes"
+
+		try {
+			const response = await axios.get(endpoint);
+			return response.data;
+		} catch (error) {
+			return undefined;
+		}
+	}
+
+	handleErrorPostVote(error: any) {
+		console.error('CECI EST MON ERREUR', error.message);
+	}
+	
+	handlePostVote(data: any) {
+		// this.data = data
+		console.log(data)
+	}
   
 }

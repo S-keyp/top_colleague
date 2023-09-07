@@ -27,23 +27,6 @@ export class ColleagueService {
 		}
 	}
 
-	async getVotes() {
-		const endpoint = this.baseRoute + "/votes"
-
-		try {
-			const response = await axios.get(endpoint);
-			return response.data;
-		} catch (error) {
-			return undefined;
-		}
-	}
-
-	handleErrorPostVote(error: any) {
-		console.error('CECI EST MON ERREUR', error.message);
-	}
-	handlePostVote(data: any) {
-		this.data = data
-		console.log(data)
-	}
+	
 
 }

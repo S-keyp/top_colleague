@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LikeHate } from 'src/app/models/like-hate';
 import { Vote } from 'src/app/models/vote';
 import { ColleagueService } from 'src/app/providers/colleague.service';
+import { VoteService } from 'src/app/providers/vote.service';
 
 
 @Component({
@@ -13,13 +14,13 @@ import { ColleagueService } from 'src/app/providers/colleague.service';
 export class VotingHistoryComponent implements OnInit {
   votes: Vote[] = [];
 
-  constructor(private colleagueService: ColleagueService){
+  constructor(private voteService: VoteService){
 
   }
 
 
   ngOnInit(): void {
-    this.colleagueService.getVotes().then((data) => {
+    this.voteService.getVotes().then((data) => {
       this.votes = data
     })
   }

@@ -1,6 +1,6 @@
-.disabled {
-    opacity: .5;
-}
+// .disabled {
+//     opacity: .5;
+// }
 
 .button{
     border: none;
@@ -10,28 +10,17 @@
     font-weight: 700;
     color: #fff;
     margin: 0 12px;
+    transition: all 250ms ease-in-out;
 }
 
 .upvote {
     background-color: rgba(75, 192, 8, 0.864);
 }
 
-// .upvote::after{
-//     content: "⬆";
-//     color: rgba(75, 192, 8, 0.864);
-//     position: absolute;
-//     top: 0;
-//     left: 50%;
-// }
-
-// .downvote::after{
-//     content: "⬇";
-//     color: rgba(255, 0, 0, 0.814);
-//     position: absolute;
-//     top: 0;
-//     left: 50%;
-// }
-
 .downvote {
     background-color: rgba(255, 0, 0, 0.814);
+}
+
+.button:hover{
+    transform: scale(1.1);
 }
