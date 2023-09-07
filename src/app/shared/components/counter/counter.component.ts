@@ -2,6 +2,7 @@ import { Component, Injectable, OnDestroy } from '@angular/core';
 import { Observable, Subject, Subscription, interval } from 'rxjs';
 import { LikeHate } from 'src/app/models/like-hate';
 import { Vote } from 'src/app/models/vote';
+import { ColleagueService } from 'src/app/providers/colleague.service';
 import { VoteService } from 'src/app/providers/vote.service';
 
 @Component({
@@ -16,11 +17,7 @@ export class CounterComponent implements OnDestroy {
   voteData: Vote | undefined 
   obs1 = interval(400)
   
-  constructor(private voteService: VoteService){
-    // this.voteSub = this.obs1.subscribe({
-    //   next: this.handleUpdateResponse.bind(this),
-    //   error: this.handleError.bind(this)
-    // })
+  constructor(private voteService: VoteService, private colleagueService: ColleagueService){
     this.voteSub = this.voteService.votesObs.subscribe({
       next: this.handleUpdateResponse.bind(this),
       error: this.handleError.bind(this)
@@ -41,5 +38,9 @@ export class CounterComponent implements OnDestroy {
     this.voteSub.unsubscribe()
   }
 
+  postVote(){
+    console.log('post')
+    this.colleagueService.voteForCollegue("gio01", "LIKE")
+  }
 
 }
